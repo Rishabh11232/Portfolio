@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rishabh Thakur | Portfolio</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #c3b9b6;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar */
+aside {
+  width: 250px;
+  background-color: #523b35;
+  color: #EDE7E3;
+  height: 100vh;
+  padding: 2rem 1rem;
+  position: fixed;
+  text-align: center;
+  
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #ffae00;
+}
+
+aside h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 1px 2px black;
+  font-weight: 700;
+}
+
+aside h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+aside nav a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+/* Main Content */
+main {
+  margin-left: 250px;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+section {
+  background: #897772;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.cert-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px) scale(1.015);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cert-card img {
+  width: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card h3 {
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.cert-card p {
+  margin: 0.2rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.cert-card ul {
+  padding-left: 1.1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Image Collage */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 5px;
+  margin-top: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.collage-img {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+.psec{
+  font-style: italic;
+}
+
+.collage-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.collage-img.large,
+.collage-img.medium,
+.collage-img.small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 1;
+  }
+}
+
+/* Social Section */
+#social {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #f4f7fa;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+#social h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #2d525a;
+  padding-bottom: 10px;
+}
+
+.social-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.social-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Experience Timeline Section */
+#experience {
+  padding: 40px;
+  background-color: #f9f6f4;
+  color: #47302b;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-left: 6px solid #47302b;
+}
+.contect-me ul{
+  display: flex;
+  gap: 7%;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.contect-me ul li a{
+  color: darkblue;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: #47302b;
+  border-radius: 10%;
+}
+
+.timeline-date {
+  font-size: 1rem;
+  color: #7b5e57;
+  margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.timeline-content p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+aside a:hover{
+  color: lightblue;
+  transition: 0.3s ease-in-out;
+  font-size: 1.2rem;
+  border:solid rgb(0, 0, 0) ;
+  padding: auto;
+  border-radius: 5rem;
+  background-color: #47302b;
+  padding-bottom: 10px;
+
+}
+</style>
+</head>
+<body>
+
+  <aside>
+    <img src="1742219895471.jpg" alt="Rishabh Thakur" class="profile-img">
+    <h1>Rishabh Thakur</h1>
+    <h3>ACCA Student (6/13)</h3>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#Experience">Experience</a>
+      <a href="#Recognition">Recognition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </aside>
+
+  <main>
+    <section id="about" style="padding: 0; border-radius: 0; box-shadow: none;" class="psec">
+      <div style="background-image: url('2706565.jpg'); background-size: cover; background-position: center; padding: 6rem 2rem; text-align: center; color: white; position: relative;">
+        <h2 style="font-size: 2.5rem; display: inline-block; padding: 0.5rem 2rem; border-radius: 8px;"></h2>
+      </div>
+      <div style="padding: 2rem; background: white;">
+        <p style="max-width: 1000px; margin: auto; font-size: 1rem;">
+          I possess strong skills in Excel, accounting, and financial management, paired with a solid commitment to delivering exceptional results in every task I undertake. With a proven track record of handling diverse responsibilities effectively, I am eager to transition into an accounting role where I can utilize my analytical abilities and attention to detail to contribute to organizational success. My 3 years of experience as an HR Manager have honed my expertise in managing processes, creating certifications, and collaborating on team initiatives, providing me with a well-rounded skill set that will add value in an accounting capacity.
+        </p>
+      </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Education</h2>
+        <div class="certifications-grid">
+      
+          <div class="cert-card">
+            <img src="ACCA_logo.svg.png" alt="ACCA">
+            <h3>ACCA Diploma in Accounting and Business</h3>
+            <p><strong>Issued:</strong> May 2024</p>
+            <ul>
+              <li>BT – 82%</li>
+              <li>MA – 52%</li>
+              <li>FA – 64%</li>
+            </ul>
+            <a href="Certificate Diploma in accounting and business.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+             View Certificate
+              </a>
+              
+          </div>
+      
+          
+      
+          <div class="cert-card">
+            <img src="ACCA_logo.svg.png" alt="ACCA Ethics">
+            <h3>Ethics & Professional Module</h3>
+            <p><strong>Issued:</strong> Dec 2021</p>
+            <ul>
+              <li>Ethics, Leadership, AI in Finance</li>
+            </ul>
+            <a href="docs/accadiploma.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                View Certificate
+              </a>
+              
+          </div>
+      
+      
+          <div class="cert-card">
+            <img src="ACCA_logo.svg.png" alt="ACCA">
+            <h3>ACCA Qualification (In Progress)</h3>
+            <p>6 out of 13 exams passed</p>
+            <a href="docs/accadiploma.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                 View Certificate
+              </a>
+              
+          </div>
+      
+          <div class="cert-card">
+            <img src="OBU.png" alt="Oxford Brookes">
+            <h3>Oxford Brookes University BSc (Hons) in Applied Accounting</h3>
+            <ul><li>Partnered with ACCA</li></ul>
+            <a href="docs/accadiploma.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                 View Certificate
+              </a>
+              
+          </div>
+          <div class="cert-card">
+            <img src="Elearn ma.jpg" alt="Elearnmarkets">
+            <h3>Advanced Excel – Financial Calculations</h3>
+            <p><strong>Issued:</strong> Mar 2024</p>
+            <ul>
+              <li>NPV, IRR, ROI, Macros</li>
+              <li>Dashboards, Forecasting</li>
+            </ul>
+            <a href="Certificate-Advanced Excel Course - Financial Calculations & Excel Made Easy-Rishabh.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                View Certificate
+                 </a>
+          </div>
+          <div class="cert-card">
+            <img src="virendra.gif" alt="Dr.V.S.E.C.">
+            <h3>ISC Commerce + Maths</h3>
+            <p>10th: 84%, 12th: 86%</p>
+            <ul><li>Accounting & GAAP</li></ul>
+            <a href="docs/accadiploma.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                 View Certificate
+              </a>
+              
+          </div>
+          <div class="cert-card">
+            <img src="NISM.jpg" alt="NISM">
+            <h3>SEBI Investor Certificate</h3>
+            <p>Score: 46/50</p>
+            <ul>
+              <li>Investor Rights, Market Risk</li>
+            </ul>
+            <a href="Certificate_SEBI investor cer ex.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                 View Certificate
+              </a>
+              
+          </div>
+          
+          <div class="cert-card">
+            <img src="Coursera.webp" alt="Coursera">
+            <h3>Intro to Data Analysis (Excel)</h3>
+            <ul>
+              <li>Data Cleaning</li>
+              <li>Pivot Tables, Charts</li>
+            </ul>
+            <a href="courcera data analyst.pdf" target="_blank" style="display:inline-block; margin-top:0.5rem; color:#4b3b09; font-weight:bold;">
+                 View Certificate
+              </a>
+              
+          </div>
+      
+        </div>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div style="background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="margin-top: 0;">Accounting</h3>
+            <ul style="padding-left: 1.1rem; font-size: 0.95rem; color: #444;">
+              <li>GAAP & IFRS</li>
+              <li>Financial Statements</li>
+              <li>Double Entry Bookkeeping</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="margin-top: 0;">Excel & Analysis</h3>
+            <ul style="padding-left: 1.1rem; font-size: 0.95rem; color: #444;">
+              <li>Advanced Excel</li>
+              <li>NPV, IRR, ROI</li>
+              <li>Dashboards & Forecasting</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="margin-top: 0;">Financial Management</h3>
+            <ul style="padding-left: 1.1rem; font-size: 0.95rem; color: #444;">
+              <li>Budgeting & Variance Analysis</li>
+              <li>Cost Control</li>
+              <li>Cash Flow Management</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="margin-top: 0;">Other Tools</h3>
+            <ul style="padding-left: 1.1rem; font-size: 0.95rem; color: #444;">
+              <li>PowerPoint & Reporting</li>
+              <li>HR Process Management</li>
+              <li>Google Workspace</li>
+            </ul>
+          </div>
+        </div>
+      </section>   
+      <section id="Experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+      
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2025 – Present</div>
+            <div class="timeline-content">
+              <h3>Business Analyst Intern</h3>
+              <p><strong>Unified Mentor</strong> · Internship</p>
+              <p>Skills: IT Business Analysis</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2023 – Dec 2023</div>
+            <div class="timeline-content">
+              <h3>HR Manager</h3>
+              <p><strong>BloodConnect Foundation</strong></p>
+              <p>Skills: Presentations, Public Speaking</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2021 – Sep 2024</div>
+            <div class="timeline-content">
+              <h3>Certificate & Making LOE</h3>
+              <p><strong>BloodConnect Foundation</strong></p>
+              <p>Skills: Microsoft Office</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2021 – Jun 2023</div>
+            <div class="timeline-content">
+              <h3>Awareness Manager (Part-time)</h3>
+              <p><strong>BloodConnect Foundation</strong></p>
+              <p>Skills: Public Speaking</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2023 – Mar 2023</div>
+            <div class="timeline-content">
+              <h3>Fundraising Manager</h3>
+              </section>
+      
+
+      <section id="Recognition">
+      <h2> Recognition in Blood Connect</h2>
+      <div class="collage">
+        <img src="M24.jpg" alt="Award" class="collage-img large" />
+        <img src="M11.jpg" alt="Newspaper Clipping" class="collage-img medium" />
+        <img src="M19.jpg" alt="Award" class="collage-img small" />
+        <img src="M21.jpg" alt="Newspaper Clipping" class="collage-img large" />
+        <img src="M10.jpg" alt="Recognition" class="collage-img large" />
+        <img src="m12.jpg" alt="Motivation" class="collage-img medium" />
+        <img src="M13.jpg" alt="Motivation" class="collage-img large" />
+        <img src="M14.jpg" alt="Motivation" class="collage-img Larger" />
+        <img src="m8.jpg" alt="Motivation" class="collage-img large" />
+      </div>
+      </section>
+     
+
+
+    <section id="social">
+        <h2>Our Social Impact during and after covid-19(Unpaid volunteer)</h2>
+        <div class="social-gallery-grid">
+          <img src="m6.jpg" alt="NGO Work 1" class="social-img" />
+          <img src="m7.jpg" alt="NGO Work 2" class="social-img" />
+          <img src="M9.jpg" alt="NGO Work 3" class="social-img" />
+          <img src="M3.jpg" alt="NGO Work 4" class="social-img" />
+          <img src="m2.jpg" alt="NGO Work 5" class="social-img" />
+          <img src="s1.jpg" alt="NGO Work 6" class="social-img" />
+          <img src="S2.jpg" alt="NGO Work 6" class="social-img" />
+          <img src="S3.jpg" alt="NGO Work 6" class="social-img" />
+          <img src="S4.jpg" alt="NGO Work 6" class="social-img" />
+          <img src="m4.jpg" alt="NGO Work 6" class="social-img" />
+          <img src="S5.png" alt="NGO Work 6" class="social-img" />
+          <img src="S6.jpg" alt="NGO Work 6" class="social-img" />
+          
+        </div>
+      </section>
+      
+
+    <section id="contact" class="contect-me">
+      <h2>Connect With Me</h2>
+      <p>Let’s grow together! Connect with me on <br>
+        <ul>
+        <li> <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li> <br>
+      <li> <a href="mailto:rishabhthakur9854@gmail.com">Send Email at rishabhthakur9854@gmail.com</a></li><br>
+      <li><a href="tel:+918957956925">Call Rishabh at +91 895 795 6925</a> </li>
+      </ul>
+
+
+</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Rishabh Thakur. All rights reserved.
+    </footer>
+  </main>
+
+</body>
+</html>
